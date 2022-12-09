@@ -1,0 +1,31 @@
+.navbar{
+    position: fixed;
+    top: 0; 
+    z-index: 1;
+    width: 100%;
+}
+#collapsibleNavbar button
+{
+   color: #000;
+   outline:none;
+   border: none;
+   margin: 0px 5px;
+   background-color: #fff;
+   border-radius: 5px;
+   font-weight: 500;
+}
+header{
+    height: 600px;
+}
+section .card
+{
+  border-top: 4px solid rgb(21, 21, 21);
+}
+footer a
+{
+    text-decoration: none;
+    color: gray;
+}
+footer a:hover{
+    color: rgb(11, 177, 177);
+}
