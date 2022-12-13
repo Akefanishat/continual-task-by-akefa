@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 
+
 @Component({
   selector: 'app-dashbored',
   templateUrl: './dashbored.component.html',
@@ -12,6 +13,7 @@ export class DashboredComponent implements OnInit {
   count: number = 0;
   tableSize: number = 7;
   tableSizes: any = [3, 6, 9, 12];
+  
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
@@ -37,5 +39,6 @@ export class DashboredComponent implements OnInit {
     this.page = 1;
     this.fetchPosts();
   }
+
 
 }

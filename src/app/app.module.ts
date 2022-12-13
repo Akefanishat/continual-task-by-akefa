@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { DashboredComponent } from './dashbored/dashbored.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ChartComponent } from './chart/chart.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponent,
     LoginComponent,
     DashboredComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

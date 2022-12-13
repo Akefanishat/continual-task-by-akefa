@@ -18,28 +18,8 @@
 </nav>
 
 <!--------------- nav bar End---------------->
-<section class="container-fluid mt-5">
-    <div class="row">
-        <div class="col-lg-6 p-3">
-            <img src="https://img.freepik.com/premium-vector/vector-infographic-circle-chart-template-five-parts_93208-1220.jpg?w=740">
-        </div>
-        <div class="col-lg-6 p-3">
-            <img width="100%" height="100%" src="https://img.freepik.com/free-vector/two-infographic-charts_1057-287.jpg?w=740&t=st=1670508460~exp=1670509060~hmac=b1f68604563cc5ba591ec07a59328290113f0778b79f6016afa3cd669e5ae9e1">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6 p-3">
-            <img src="https://thumbs.dreamstime.com/z/business-team-chart-company-growth-11896784.jpg" width="100%">
-        </div>
-        <div class="col-lg-6 p-3">
-            <img width="100%" src="https://conceptdraw.com/a2077c3/p16/preview/640/pict--percentage-arrow-ring-chart-pie-charts-vector-stencils-library">
-        </div>
-    </div>
-
-     <div class="col-lg-6 mx-auto">
-        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210518104305/FinalPhoto1.jpg" width="100%">
-     </div>
+<section class="container-fluid mt-5 p-5">
+    <app-chart></app-chart>
 </section>
 
 <div class="container">
@@ -49,7 +29,8 @@
         </div>
         <div class="col-lg-10 d-flex justify-content-end">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" width="100%">
+                
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" width="100%">
                 <button class="btn btn-primary my-2 my-sm-0">Add +</button> 
             </form>
         </div>
@@ -91,6 +72,110 @@
       </pagination-controls>
     </div>
   </div>
+
+
+  <div class="container">
+    <div class="row my-3">
+        <div class="col-lg-2">
+            <h4>Entire No</h4>
+        </div>
+        <div class="col-lg-10 d-flex justify-content-end">
+            <form class="form-inline my-2 my-lg-0">
+                
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" width="100%">
+                <button class="btn btn-primary my-2 my-sm-0">Add +</button> 
+            </form>
+        </div>
+    </div>
+   
+       
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let post of POSTS
+              | paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };
+            let i = index
+          "
+        >
+          <th scope="row">{{ post.id }}</th>
+          <td>{{ post.title }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row my-3">
+        <div class="col-lg-2">
+            <h4>Entire No</h4>
+        </div>
+        <div class="col-lg-10 d-flex justify-content-end">
+            <form class="form-inline my-2 my-lg-0">
+                
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" width="100%">
+                <button class="btn btn-primary my-2 my-sm-0">Add +</button> 
+            </form>
+        </div>
+    </div>
+   
+       
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let post of POSTS
+              | paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };
+            let i = index
+          "
+        >
+          <th scope="row">{{ post.id }}</th>
+          <td>{{ post.title }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+
 
   <!-- Footer -->
   <footer class="page-footer font-small blue pt-4 mt-5" style="

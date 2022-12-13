@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 const endpoint = 'https://jsonplaceholder.typicode.com/posts';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,4 +11,10 @@ export class PostService {
   getAllPosts(): Observable<any> {
     return this.http.get(endpoint);
   }
+  
+  Getchartinfo(){
+    return this.http.get("http://localhost:3000/sales");
+  }
+
+
 }
